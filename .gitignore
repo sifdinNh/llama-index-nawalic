@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+data_store/
+graph_store/
+vector_store/
+metadata/
+ocr_data/
+text_with_metadata/
+ocr_data_2/

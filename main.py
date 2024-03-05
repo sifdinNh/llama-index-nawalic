@@ -50,23 +50,6 @@ def extract_number(filename):
 
 
 
-
-class NodeMetadata(BaseModel):
-    """Node metadata."""
-
-    arabic_person_names: List[str] = Field(
-        ..., description="Unique arabic Person names in this text chunk."
-    )
-    arabic_summary: str = Field(
-        ..., description="A concise summary of this text chunk in arabic."
-    )
-    unique_10_arabic_keywords: str = Field(
-        ..., description="10 unique keywords for this text chunk"
-    )
-    arabic_questions_this_excerpt_can_answer : List[str] = Field(
-        ..., description="3 questions this context can provide specific answers to which are unlikely to be found elsewhere in arabic language, return nothing if it doesnt have context meaning"
-    )
-
 def extract_metadata(llm, docs, parser , presist_dir = "text_with_metadata/06-05-2016"):
     openai_program = OpenAIPydanticProgram.from_defaults(
         output_cls=NodeMetadata,
